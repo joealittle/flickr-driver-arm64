@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <title>Flickr Driver</title>
+</head>
+
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flickr_logo.png" alt="Flickr" width="300"><br>
+    Authenticate here to give Box access to your private and public photos.<br><br>
+
+    <a href="/flickr-driver/ui/checkauth?post_auth_callback=/core-ui/ui/view/flickr-driver">Authenticate & Update</a><br><br>
+
+    <a href="/flickr-driver/ui/clear">Clear store</a><br>
+    <a href="/flickr-driver/ui/logout">Logout</a><br><br>
+
+    <div>
+        current data:
+    </div>
+
+    <% for (var key in config) { %>
+        <div>
+            <img src="<%= config[key] %>" alt="">
+        </div>
+    <% } %>
+</body>
+
+</html>

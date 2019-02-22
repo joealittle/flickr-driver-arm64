@@ -1,0 +1,46 @@
+{
+    "manifest-version": 1,
+    "name": "flickr-driver",
+    "docker-registry":"joealittle",
+	"docker-image-tag":"latest",
+    "version": "0.1.0",
+    "description": "flickr driver to pull photos into databox",
+    "author": "BBC",
+    "licence": "MIT",
+    "databox-type": "driver",
+    "tags": [
+        "flickr"
+    ],
+    "homepage": "https://github.com/bbc/bbc-box-flickr-driver.git",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bbc/bbc-box-flickr-driver.git"
+    },
+    "datasources": [],
+    "network-permissions": [],
+    "external-whitelist": [{
+        "urls": [
+            "https://www.flickr.com",
+            "http://www.flickr.com",
+            "https://api.flickr.com",
+            "https://api.login.yahoo.com",
+            "https://login.yahoo.com",
+            "https://yahoo.com"
+        ]
+
+    }],
+    "resource-requirements": {
+        "store": "core-store"
+    },
+    "provides": [
+        {
+            "data-source-type":"flickr::photodata",
+            "required": true,
+            "name": "Flickr data",
+            "clientid": "FlickrDataStore",
+            "description": "flickr image data",
+            "store-type":"kv",
+            "schema":{}   
+        }
+    ]
+}
